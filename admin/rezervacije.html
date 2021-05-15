@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="hr">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Rent a Car</title>
+	<link href="../css/styles.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+		integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+		crossorigin="anonymous" />
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+	<link rel="stylesheet" href="../css/table.css">
+	<link rel="stylesheet" href="../css/modal.css">
+	<link rel="stylesheet" href="../css/dashboard.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body>
+
+	<header>
+		<nav>
+			<div class="nav-info">corti's Rent a car</div>
+			<div class="navbar-link">
+				<a href="dashboard.html" class="nav-link circle">VOZILA</a>
+				<a href="korisnici.html" class="nav-link circle">KORISNICI</a>
+				<a href="javascript:void(0);" class="nav-link logout" onclick="Logout()">Logout</a>
+			</div>
+		</nav>
+	</header>
+
+	<main>
+		<h3>Popis rezervacija</h3>
+
+		<table id="adminPopuniRezervacije" class="hover display " style="width:100%; text-align: center;">
+			<thead style="color: #fff;">
+				<tr>
+					<th>Ime</th>
+					<th>Prezime</th>
+					<th>OIB</th>
+					<th>Broj mob</th>
+					<th>Email</th>
+					<th>Vozilo</th>
+					<th>Reg. Oznaka</th>
+					<th>Datum Od</th>
+					<th>Datum Do</th>
+					<th>Cijena</th>
+					<th>Završi</th>
+				</tr>
+			</thead>
+			<tbody id="table_body_rezervacije"> </tbody>
+		</table>
+	</main>
+<!-- 
+	 <!-- Dodaj Modal
+	<div id="dodajKorisnikaModal" class="modal">
+		<!-- Modal content
+		<div class="modal-content">
+			<form id="dodajkorisnika" class="formDodajAuto">
+				<span>Ime:</span>
+				<input type="text" id="ime" class="marka" placeholder="Ime osobe">
+				<span>Prezime:</span>
+				<input type="text" id="prezime" class="marka" placeholder="Prezime osobe">
+				<span>OIB:</span>
+				<input type="text" id="oib" class="marka" placeholder="11 brojeva">
+				<span>Broj mob:</span>
+				<input type="text" id="mobitel" class="marka" placeholder="09x...">
+				<span>Email:</span>
+				<input type="text" id="mail" class="marka" placeholder="rentacar@rentacar.hr">
+				<button class="dodaj" id="dodajKorisnika" onclick="DodajKorisnika()">DODAJ KORISNIKA</button>
+			</form>
+		</div>
+	</div>
+
+	<!-- Dodaj Modal
+	<div id="editKorisnikaModal" class="modal">
+		<!-- Modal content
+		<div class="modal-content">
+			<form id="uredikorisnika" class="formDodajAuto">
+				<span>Ime:</span>
+				<input type="text" id="imeInput" class="marka" placeholder="Ime osobe">
+				<span>Prezime:</span>
+				<input type="text" id="prezimeInput" class="marka" placeholder="Prezime osobe">
+				<span>OIB:</span>
+				<input type="text" id="oibInput" class="marka" placeholder="11 brojeva">
+				<span>Broj mob:</span>
+				<input type="text" id="mobitelInput" class="marka" placeholder="09x...">
+				<span>Email:</span>
+				<input type="text" id="mailInput" class="marka" placeholder="rentacar@rentacar.hr">
+				<div id ="uredi-korisnika-forma" class="modal-footer"></div>
+			</form>
+		</div>
+	</div>
+ -->
+	<footer>
+		Copyright Hrvoje Đaković 2021
+
+	</footer>
+
+	<script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-analytics.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-database.js"></script>
+	<script src="../js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js">
+	</script>
+	<script src="../js/config.js"></script>
+	<script src="../js/admin.js"></script>
+	<script src="../js/modal.js"></script>
+</body>
+
+</html>

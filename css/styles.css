@@ -1,0 +1,293 @@
+@import url("https://fonts.googleapis.com/css2?family=Muli:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'Muli', sans-serif;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #485461;
+  background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
+}
+
+h3 {
+  color: #fff;
+  font-size: 2rem;
+  letter-spacing: 0.15rem;
+  text-align: center;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #29539b;
+  background-image: linear-gradient(315deg, #29539b 0%, #1e3b70 74%);
+}
+
+header nav {
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 90%;
+  padding: 2rem 0;
+}
+
+header nav .nav-info {
+  font-family: 'Oswald';
+  color: #fff;
+  font-size: 2rem;
+}
+
+header nav .navbar-link .nav-link.circle:hover {
+  background-color: #0066ff44;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+header nav .nav-link {
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+header nav .nav-link:active {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+header nav .nav-link:hover {
+  background-color: #00ff0044;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+header nav .nav-link.logout {
+  color: red !important;
+}
+
+header nav .nav-link.logout:hover {
+  background-color: #ff000044;
+  -webkit-transition: 0.3s ease;
+  transition: 0.3s ease;
+}
+
+header .reservation {
+  margin: 0 auto;
+  width: 65%;
+  padding-bottom: 4rem;
+}
+
+header .reservation .search {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  background-color: #fff;
+  border-radius: 10px;
+  text-align: center;
+  -webkit-box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.1);
+  /*             .pickup {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .arrival {
+                display: flex;
+                flex-direction: column;
+            } */
+}
+
+header .reservation .search .button {
+  width: 100%;
+  background-color: #29539b;
+  background-image: linear-gradient(315deg, #29539b 0%, #1e3b70 74%);
+  padding: 1rem 0;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  border: 0;
+  border-radius: 10px;
+  margin: 10px 10px;
+}
+
+header .reservation .search .button:active {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+header .reservation .search .button:hover {
+  background-color: #29539b;
+  background-image: linear-gradient(315deg, #1e3b70 0%, #29539b 75%);
+}
+
+main {
+  width: 70%;
+  margin: 0 auto;
+}
+
+main .dostupni {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main .dostupni .vozilo {
+  width: 400px;
+  margin-bottom: 2rem;
+}
+
+main .dostupni .vozilo img {
+  width: 100%;
+  height: 225px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+main .dostupni .vozilo .info {
+  -webkit-transform: translateY(-5px);
+          transform: translateY(-5px);
+  width: 100%;
+  height: 220px;
+  background-color: #22498d;
+  padding: 1rem 0.5rem;
+  position: relative;
+}
+
+main .dostupni .vozilo .info .odaberi {
+  position: absolute;
+  bottom: 10px;
+  width: 96%;
+  background-color: #299b29;
+  background-image: linear-gradient(315deg, #299b29 0%, #3c9b29 74%);
+  padding: 1rem 0;
+  margin-top: 1.5rem;
+  text-align: center;
+  border-radius: 10px;
+  border: 0;
+  color: #fff;
+  text-decoration: none;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+main .dostupni .vozilo .info .odaberi:active {
+  -webkit-transform: scale(0.95);
+          transform: scale(0.95);
+}
+
+main .dostupni .vozilo .info .odaberi:hover {
+  cursor: pointer;
+}
+
+main .dostupni .vozilo .info .odaberi:disabled {
+  background-color: #9b2929;
+  background-image: linear-gradient(315deg, #9b2929 0%, #9b2929 74%);
+  cursor: not-allowed;
+}
+
+main .dostupni .vozilo .info .namemodel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+main .dostupni .vozilo .info .namemodel .name {
+  color: #fff;
+  font-size: 1.3rem;
+}
+
+main .dostupni .vozilo .info .namemodel .model {
+  color: #b4b4b4;
+}
+
+main .dostupni .vozilo .info .infomodel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-transform: uppercase;
+  margin: 10px 0;
+}
+
+main .dostupni .vozilo .info .infomodel .motor {
+  color: #78abc9;
+}
+
+main .dostupni .vozilo .info .infomodel .mjenjac {
+  color: #78abc9;
+}
+
+main .dostupni .vozilo .info .cijena {
+  margin: 10px 20px;
+}
+
+main .dostupni .vozilo .info .cijena .left {
+  color: #fff;
+}
+
+main .dostupni .vozilo .info .cijena .right {
+  color: #73be71;
+}
+
+footer {
+  width: 100%;
+  background-color: #29539b;
+  background-image: linear-gradient(315deg, #29539b 0%, #1e3b70 74%);
+  text-align: center;
+  padding: 25px 0;
+  color: #fff;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+@media (min-width: 768px) {
+  header .reservation {
+    width: 480px;
+  }
+  main .dostupni .vozilo {
+    margin: 1rem 0.5rem;
+  }
+}
+/*# sourceMappingURL=styles.css.map */

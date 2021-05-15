@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="hr">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Rent a Car</title>
+	<link href="../css/styles.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+		integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+		crossorigin="anonymous" />
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.min.css">
+	<link rel="stylesheet" href="../css/table.css">
+	<link rel="stylesheet" href="../css/modal.css">
+	<link rel="stylesheet" href="../css/dashboard.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body>
+
+	<header>
+		<nav>
+			<div class="nav-info">corti's Rent a car</div>
+			<div class="navbar-link">
+				<a href="korisnici.html" class="nav-link circle">KORISNICI</a>
+				<a href="rezervacije.html" class="nav-link circle">REZERVACIJE</a>
+				<a href="javascript:void(0);" class="nav-link logout" onclick="Logout()">Logout</a>
+			</div>
+		</nav>
+	</header>
+
+	<main>
+		<button class="button-dashboard" onclick="DodajAutomobilForm()">Dodaj Vozilo</button>
+		<h3>Popis svih automobila</h3>
+
+		<table id="adminPopuniAutomobile" class="hover display " style="width:100%; text-align: center;">
+			<thead style="color: #fff;">
+				<tr>
+					<th>Marka</th>
+					<th>Model</th>
+					<th>Motor</th>
+					<th>Mjenjac</th>
+					<th>Datum Reg.</th>
+					<th>Reg. Oznaka</th>
+					<th>Najam</th>
+					<th>Uredi</th>
+					<th>Izbrisi</th>
+				</tr>
+			</thead>
+			<tbody id="table_body_vozila"> </tbody>
+		</table>
+	</main>
+
+	<!-- Dodaj Modal -->
+	<div id="dodajAutoModal" class="modal">
+		<!-- Modal content -->
+		<div class="modal-content">
+			<form id="dodajauto" class="formDodajAuto">
+				<span>Marka vozila:</span>
+				<input type="text" id="marka" class="marka" placeholder="Marka (Audi A4, BMW serija 3, VW Golf GTD..)">
+				<span>Model vozila:</span>
+				<input type="text" id="model" class="marka" placeholder="Model (karavan, limuzina, hatchback)">
+				<span>Registracijska pločica vozila:</span>
+				<input type="text" id="oznaka" class="marka" placeholder="NGxxxFZ">
+				<span>Trajanje registracije vozila:</span>
+				<input type="text" id="registracija" class="marka" placeholder="20.04.2004.">
+				<span>Cijena najma vozila:</span>
+				<input type="text" id="cijenanajma" class="marka" placeholder="1500">
+				<span>Mjenjač:</span>
+				<input type="text" id="mjenjac" class="marka" placeholder="Automatik">
+				<span>Motor:</span>
+				<input type="text" id="motor" class="marka" placeholder="Dizel">
+				<span>Slika:</span>
+				<input type="text" id="slika" class="marka" placeholder="URL Slike (http://random.jpg)">
+				<button class="dodaj" id="dodaj" onclick="DodajAutomobil()">DODAJ AUTO</button>
+			</form>
+		</div>
+	</div>
+
+	<!-- Dodaj Modal -->
+	<div id="rowAutoModal" class="modal">
+		<!-- Modal content -->
+		<div class="modal-content">
+			<form id="urediauto" class="formDodajAuto">
+				<span>Marka vozila:</span>
+				<input type="text" id="markaInput" class="marka" placeholder="Marka (Audi A4, BMW serija 3, VW Golf GTD..)">
+				<span>Model vozila:</span>
+				<input type="text" id="modelInput" class="marka" placeholder="Model (karavan, limuzina, hatchback)">
+				<span>Registracijska pločica vozila:</span>
+				<input type="text" id="oznakaInput" class="marka" placeholder="NGxxxFZ">
+				<span>Trajanje registracije vozila:</span>
+				<input type="text" id="registracijaInput" class="marka" placeholder="20.04.2004.">
+				<span>Cijena najma vozila:</span>
+				<input type="text" id="cijenanajmaInput" class="marka" placeholder="1500">
+				<span>Mjenjač:</span>
+				<input type="text" id="mjenjacInput" class="marka" placeholder="Automatik">
+				<span>Motor:</span>
+				<input type="text" id="motorInput" class="marka" placeholder="Dizel">
+				<span>Slika:</span>
+				<input type="text" id="slikaInput" class="marka" placeholder="URL Slike (http://random.jpg)">
+				<div id ="uredi-automobil-forma" class="modal-footer"></div>
+			</form>
+		</div>
+	</div>
+
+
+
+	<footer>
+		Copyright Hrvoje Đaković 2021
+
+	</footer>
+
+	<script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-analytics.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-database.js"></script>
+	<script src="../js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js">
+	</script>
+	<script src="../js/config.js"></script>
+	<script src="../js/admin.js"></script>
+	<script src="../js/modal.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Muli:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Muli', sans-serif;
+    width: 100%;
+    margin: 0 auto;
+    background-color: #485461;
+    background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
+}
+
+h3 {
+    color: #fff;
+    font-size: 2rem;
+    letter-spacing: 0.15rem;
+    text-align: center;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    background-color: #29539b;
+    background-image: linear-gradient(315deg, #29539b 0%, #1e3b70 74%);
+
+    nav {
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 90%;
+        padding: 2rem 0;
+
+        .nav-info {
+            font-family: 'Oswald';
+            color: #fff;
+            font-size: 2rem;
+        }
+
+        .navbar-link {
+            .nav-link {
+                &.circle {
+                    &:hover {
+                        background-color: #0066ff44;
+                        transition: 0.3s ease;
+                    }
+                }
+            }
+        }
+
+        .nav-link {
+            color: #fff;
+            text-decoration: none;
+            border: 1px solid #fff;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+
+            &:active {
+                transform: scale(0.95);
+            }
+
+            &:hover {
+                background-color: #00ff0044;
+                transition: 0.3s ease;
+            }
+
+            &.logout {
+                color: red !important;
+
+                &:hover {
+                    background-color: #ff000044;
+                    transition: 0.3s ease;
+                }
+            }
+        }
+    }
+
+    .reservation {
+        margin: 0 auto;
+        width: 65%;
+        padding-bottom: 4rem;
+
+        .search {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+            background-color: #fff;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.1);
+
+            /*             .pickup {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .arrival {
+                display: flex;
+                flex-direction: column;
+            } */
+
+            .button {
+                width: 100%;
+                background-color: #29539b;
+                background-image: linear-gradient(315deg, #29539b 0%, #1e3b70 74%);
+                padding: 1rem 0;
+                color: #fff;
+                text-decoration: none;
+                text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+                border: 0;
+                border-radius: 10px;
+                margin: 10px 10px;
+
+                &:active {
+                    transform: scale(0.95);
+                }
+
+                &:hover {
+                    background-color: #29539b;
+                    background-image: linear-gradient(315deg, #1e3b70 0%, #29539b 75%);
+                }
+            }
+        }
+    }
+}
+
+main {
+    width: 70%;
+    margin: 0 auto;
+
+    .dostupni {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .vozilo {
+            width: 400px;
+            margin-bottom: 2rem;
+
+            img {
+                width: 100%;
+                height: 225px;
+                object-fit: cover;
+            }
+
+            .info {
+                transform: translateY(-5px);
+                width: 100%;
+                height: 220px;
+                background-color: #22498d;
+                padding: 1rem 0.5rem;
+                position: relative;
+
+
+                .odaberi {
+                    position: absolute;
+                    bottom: 10px;
+                    width: 96%;
+                    background-color: #299b29;
+                    background-image: linear-gradient(315deg, #299b29 0%, #3c9b29 74%);
+                    padding: 1rem 0;
+                    margin-top: 1.5rem;
+                    text-align: center;
+                    border-radius: 10px;
+                    border: 0;
+                    color: #fff;
+                    text-decoration: none;
+                    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+
+                    &:active {
+                        transform: scale(0.95);
+                    }
+
+                    &:hover {
+                        cursor: pointer;
+                    }
+
+                    &:disabled {
+                        background-color: #9b2929;
+                        background-image: linear-gradient(315deg, #9b2929 0%, #9b2929 74%);
+                        cursor: not-allowed;
+                    }
+                }
+
+                .namemodel {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    .name {
+                        color: #fff;
+                        font-size: 1.3rem;
+                    }
+
+                    .model {
+                        color: rgb(180, 180, 180);
+                    }
+                }
+
+                .infomodel {
+                    display: flex;
+                    justify-content: space-evenly;
+                    align-items: center;
+                    text-transform: uppercase;
+                    margin: 10px 0;
+
+                    .motor {
+                        color: rgb(120, 171, 201);
+                    }
+
+                    .mjenjac {
+                        color: rgb(120, 171, 201);
+                    }
+                }
+
+                .cijena {
+                    margin: 10px 20px;
+
+                    .left {
+                        color: #fff;
+                    }
+
+                    .right {
+                        color: rgb(115, 190, 113);
+                    }
+                }
+            }
+        }
+    }
+}
+
+footer {
+    width: 100%;
+    background-color: #29539b;
+    background-image: linear-gradient(315deg, #29539b 0%, #1e3b70 74%);
+    text-align: center;
+    padding: 25px 0;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+@media(min-width: 768px) {
+    header {
+        .reservation {
+            width: 480px;
+        }
+    }
+
+    main {
+        .dostupni {
+            .vozilo {
+                margin: 1rem 0.5rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="hr">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Rent a Car</title>
+	<link href="css/styles.css" rel="stylesheet">
+	<link href="css/modal.css" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+		integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+		crossorigin="anonymous" />
+</head>
+
+<body>
+
+	<header>
+
+		<nav>
+			<div class="nav-info">corti's Rent a car</div>
+			<a href="login.html" class="nav-link">Login</a>
+		</nav>
+
+		<div class="reservation">
+			<h3>FILTER REZERVACIJA</h3>
+			<div class="search">
+
+				<!-- 				<div class="pickup">
+					<label for="pickup">Pickup Time</label>
+					<select name="pickup" id="pickup">
+						<option value="volvo">29.4</option>
+						<option value="saab">29.4</option>
+						<option value="mercedes">29.4</option>
+						<option value="audi">29.4</option>
+					</select>
+				</div>
+
+				<div class="arrival">
+					<label for="arrival">Arrival Time</label>
+					<select name="arrival" id="arrival">
+						<option value="volvo">30.4</option>
+						<option value="saab">30.4</option>
+						<option value="mercedes">30.4</option>
+						<option value="audi">30.4</option>
+					</select>
+				</div> -->
+
+				<button class="button" id="btnSlobodni" onclick="SlobodniAutomobili()">SLOBODNA VOZILA</button>
+				<button class="button" id="btnPopuni" onclick="PopuniAutomobile()">SVA VOZILA</button>
+
+			</div>
+		</div>
+
+	</header>
+
+	<main>
+
+		<h3>Popis svih automobila</h3>
+
+		<div class="dostupni" id="dostupni">
+
+		</div>
+	</main>
+
+	<footer>
+		Copyright Hrvoje Đaković 2021</br>
+		// todo: unos datuma početka i kraja rezervacije, </br>filtracija slobodnih auta (npr vozilo A rezervirano do 25.5. mi želimo rezervirati od 26.5. pa će se taj auto prikazati kao slobodan, iako trenutno nije slobodan), </br>automatsko izračunavanje cijene prilikom završetka rezervacije, </br>ispis PDF računa i slanje na mail računa </br>
+		// login podaci: radnik1@rentacar.hr ; radnik1
+	</footer>
+
+	<!-- Rezerviraj Modal -->
+	<div id="rezervirajAuto" class="modal">
+		<!-- Modal content -->
+		<div class="modal-content">
+			<form id="rezervirajauto" class="formDodajAuto">
+				<span>Vozilo:</span>
+				<input type="text" id="rezervacijaVozilo" class="marka" disabled>
+				<span>Cijena najma:</span>
+				<input type="text" id="rezervacijaCijena" class="marka" disabled>
+				<span>Ime:</span>
+				<input type="text" id="rezervacijaIme" class="marka" placeholder="Ivan">
+				<span>Prezime:</span>
+				<input type="text" id="rezervacijaPrezime" class="marka" placeholder="Ivić">
+				<span>OIB:</span>
+				<input type="text" id="rezervacijaOIB" class="marka" placeholder="12345678901">
+				<span>Broj mobitela:</span>
+				<input type="text" id="rezervacijaMobitel" class="marka" placeholder="09xxxxxxxxx">
+				<span>Email:</span>
+				<input type="text" id="rezervacijaEmail" class="marka" placeholder="ivan@gmail.com">
+				<div id ="rezerviraj-automobil-forma" class="modal-footer"></div>
+			</form>
+		</div>
+	</div>
+
+
+	<script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-analytics.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.2.0/firebase-database.js"></script>
+	<script src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js">
+	</script>
+	<script src="js/config.js"></script>
+	<script src="js/rentacar.js"></script>
+</body>
+
+</html>
+
+<!--
+	za sutra: 
+	- kreirati mogućnost rezervacije (odabir -> modal ime prezime oib datum -> potvrda)
+	- filter rezervacije po korisniku, odabir korisnika, pa poništavanje rezervacije ili kraj rezervacije te naplata
+	- klikom na crveni (rezervirani) auto otvori se modal sa podacima o korisniku, trajanju rezervacije i cijeni
+	- zapisi sa history rezervacijama
+-->
+
+
+<!-- 
+<div class="vozilo">
+	<img src="https://images.unsplash.com/photo-1541845597-4b8d7bf81ebf?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+		alt="Skoda">
+	<div class="info">
+
+		<div class="namemodel">
+			<div class="name">Škoda Fabia</div>
+			<div class="model">Karavan</div>
+		</div>
+
+		<div class="cijena">
+			<div class="left">
+				<span>Po danu:</span>
+				253,60 HRK
+			</div>
+			<div class="right">
+				<span>Ukupno:</span>
+				1253,60 HRK
+			</div>
+		</div>
+
+		<div class="odaberi"><a href="#" id="odaberi">ODABERI</a></div>
+	</div>
+</div>
+ -->
